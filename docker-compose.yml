@@ -15,11 +15,13 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3001:3001"
-  weather:
-    build:
-      context: .
-      dockerfile: Dockerfile.weather
-  news:
-    build:
-      context: .
-      dockerfile: Dockerfile.news
+    network_mode: bridge 
+  #weather:
+  #  build:
+  #    context: .
+  #    dockerfile: Dockerfile.weather
+  #news:
+  #  build:
+  #    context: .
+  #    dockerfile: Dockerfile.news
+

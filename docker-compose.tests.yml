@@ -5,6 +5,8 @@ services:
       context: .
       dockerfile: Dockerfile.tests
 
+    network_mode: bridge 
+
 networks: 
   default: 
     external: 
