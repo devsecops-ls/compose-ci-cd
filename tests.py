@@ -3,6 +3,8 @@ import time
 import os
 
 if __name__ == "__main__":
+
+    # to get the IP: docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}'  compose-ci-cd_master_1
     IP_ADDRESS_API = os.getenv("IP_ADDRESS_API")
     test_req1 = requests.get("http://{IP_ADDRESS_API}:3001/news?country=gr")
 
