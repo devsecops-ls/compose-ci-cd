@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  tester:
+    build:
+      context: .
+      dockerfile: Dockerfile.tests
+
+networks: 
+  default: 
+    external: 
+      name: external-network
