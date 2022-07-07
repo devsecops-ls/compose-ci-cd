@@ -8,7 +8,7 @@ jobs:
       - name: Build the stack
         run: docker-compose up --build -d
       - name: Get the IP of the container
-        run: echo "IP_ADDR"=$(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}'  compose-ci-cd_master_1)" >> $GITHUB_ENV
+        run: echo "IP_ADDR=$(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}'  compose-ci-cd_master_1)" >> $GITHUB_ENV
       - name: Test
         run: echo $IP_ADDR
       - name: Build the stack
