@@ -1,8 +1,8 @@
 FROM python:3.8-slim-buster
 # Install dependencies:
 COPY requirements.txt .
-ENTRYPOINT echo $IP_ADDRESS_API
 RUN pip install -r requirements.txt
 COPY tests.py .
 # Run the application:
-CMD python tests.py
+ENTRYPOINT [ "python", "-u" ]
+CMD ["tests.py"]
