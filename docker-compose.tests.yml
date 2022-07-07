@@ -4,8 +4,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.tests
-
     network_mode: bridge 
+    environment:
+      - IP_ADDRESS_API=${IP_ADDR}
 
 networks: 
   default: 
