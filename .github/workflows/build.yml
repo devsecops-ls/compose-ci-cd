@@ -13,5 +13,7 @@ jobs:
         run: echo $IP_ADDR
       - name: Build the stack
         run: docker-compose -f docker-compose.tests.yml up --build -d
+      - name: Print tests
+        run: docker logs compose-ci-cd_tester_1
 
     
