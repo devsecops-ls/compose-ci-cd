@@ -6,6 +6,10 @@ import requests
 app = Flask(__name__)
 api = Api(app)
 
+@app.route("/")
+def simple():
+    return {"message": "hi there"}
+
 @app.route('/weather')
 def weather():
     city_name = request.args.get('city')
@@ -14,6 +18,6 @@ def weather():
     complete_url = base_url + "appid=" + api_key + "&q=" + city_name
     response = requests.get(complete_url)
     return response.json()
-
+                                                         
 if __name__ == '__main__':
-     app.run(host="0.0.0.0",port='3002',threaded=True,debug=True)
+    app.run(host="0.0.0.0",port=3002,debug=True)
