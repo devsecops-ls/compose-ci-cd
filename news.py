@@ -14,6 +14,6 @@ def news():
     complete_url = base_url + "country=" + country_name + "&apiKey=" + api_key
     response = requests.get(complete_url)
     return response.json()
-    
+
 if __name__ == '__main__':
-     app.run(host="0.0.0.0",port='3003',threaded=True,debug=True)
+    app.run(host="0.0.0.0",port=3003,threaded=True,debug=True)
