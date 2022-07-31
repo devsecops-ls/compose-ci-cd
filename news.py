@@ -8,6 +8,7 @@ api = Api(app)
 
 @app.route('/news')
 def news():
+    print("In here ")
     country_name = request.args.get('country')
     api_key = "70dcd1c6a0d24ebdb57ff071ff9b8ddc"
     base_url = "http://newsapi.org/v2/top-headlines?"
