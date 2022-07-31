@@ -12,6 +12,8 @@ jobs:
       - name: Build the stack
         run: docker-compose -f docker-compose.tests.yml up --build 
       - name: Print tests
+        run: docker logs compose-ci-cd_master_1
+      - name: Print tests
         run: docker logs compose-ci-cd_tester_1
 
     
