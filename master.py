@@ -22,8 +22,7 @@ def weather():
 def news():
     country_name = request.args.get('country')
     if country_name.isdigit() or len(country_name) > 2 :
-        resp = "Country name must be string. Choose from: ae ar at au be bg br ca ch cn co cu cz de eg fr gb gr hk hu id ie il in it jp k
-r lt lv ma mx my ng nl no nz ph pl pt ro rs ru sa se sg si sk th tr tw ua us ve za"
+        resp = "Country name must be string. Choose from: ae ar at au be bg br ca ch cn co cu cz de eg fr gb gr hk hu id ie il in it jp kr lt lv ma mx my ng nl no nz ph pl pt ro rs ru sa se sg si sk th tr tw ua us ve za"
         return resp
     response = requests.get("http://news:3003/news?country="+ country_name)
     return response.json()
