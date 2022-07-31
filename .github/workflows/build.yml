@@ -5,10 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Build the stack
-        run: docker-compose up --build -d
       - name: Create network
         run: docker network create compose-network
+      - name: Build the stack
+        run: docker-compose up --build -d
       - name: Build the stack
         run: docker-compose -f docker-compose.tests.yml up --build 
       - name: Print tests
